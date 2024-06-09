@@ -1,6 +1,6 @@
 lw x9, MaxIterations
-lw x18, N1
-lw x19, N2
+lw x18, N1 # multiplier
+lw x19, N2 # multiplicand
 addi x20, x0, 0
 addi x5, x0, 0
 
@@ -19,7 +19,7 @@ mult:
         
 		slli x19, x19, 1 # Shift the multiplicand register left 1 bit
 		
-        srli x18, x18, 1 # Shift the multiplicand register right 1 bit
+        srli x18, x18, 1 # Shift the multiplier register right 1 bit
     
     bne x9, x5, mult
 
