@@ -1,3 +1,5 @@
+# OBS: Colocar entrada da seguinte forma: "12 28 "
+
 lw x9, MaxIterations 
 addi x18, x0, 0 # multiplier
 addi x19, x0, 0 # multiplicand
@@ -60,4 +62,3 @@ final:
 MaxIterations: .word 32
 ascii: .word 0x30
 espace: .word 0x20
-
