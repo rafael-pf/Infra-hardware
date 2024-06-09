@@ -35,8 +35,8 @@ lerMultiplicand:
     add x19, x19, x7
     beq x0, x0, lerMultiplicand # continuar lendo
 
+addi x5, x0, 0
 mult:
-    addi x5, x0, 0
     addi x5, x5, 1 # Incrementa contadord
 
     # Test multiplier (bit mask)
@@ -60,3 +60,4 @@ final:
 MaxIterations: .word 32
 ascii: .word 0x30
 espace: .word 0x20
+

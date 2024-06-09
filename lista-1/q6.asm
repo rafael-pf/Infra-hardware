@@ -1,3 +1,6 @@
+#OBS: lê o input uma unica vez e fica piscando com o numero correspondente
+
+
 addi x5, x0, 0 
 addi x6, x0, 0
 sb x5, 1029(x0)

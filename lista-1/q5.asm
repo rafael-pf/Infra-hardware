@@ -5,6 +5,7 @@
 #       AMARELO DIREITA: 5
 #       VERDE ESQUERDA: 6
 #       VERDE DIREITA: 7
+# Loop infinito que lê o sensor e liga o determinado led
 
 lb x10, 0(x0)
 sb x10, 1030(x0)
