@@ -6,7 +6,10 @@
 #       VERDE ESQUERDA: 6
 #       VERDE DIREITA: 7
 # Loop infinito que lê o sensor e liga o determinado led
-# Resposta: 
+# Resposta: CPI = 3.72 considerando o primeiro loop para uma temperatura maior que 36°C
+# taxa de leitura ~= 1.6 leituras/segundo (clock 100Hz)
+# para a taxa de leitura ter um speed up de 10x (~16 leituras/segundo) a frequência do clock deve ser 1000Hz
+# É possível, basta apenas aumentar o clock
 
 lb x10, 0(x0)
 sb x10, 1030(x0)
