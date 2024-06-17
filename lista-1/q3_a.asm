@@ -1,3 +1,6 @@
+# Resposta: O tempo máximo de execução foi 756 ciclos de clock
+
+
 lw x9, MaxIterations
 lw x18, N1 # multiplier
 lw x19, N2 # multiplicand

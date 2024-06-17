@@ -1,3 +1,6 @@
+# Reposta: Números utilizados para multiplicar: 45270 45270 
+# Tempo de execução máximo foi igual a 2731 ciclos de clock
+
 # OBS: Colocar entrada da seguinte forma: "12 28 "
 
 lw x9, MaxIterations 
