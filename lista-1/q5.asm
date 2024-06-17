@@ -6,6 +6,7 @@
 #       VERDE ESQUERDA: 6
 #       VERDE DIREITA: 7
 # Loop infinito que lê o sensor e liga o determinado led
+# Resposta: 
 
 lb x10, 0(x0)
 sb x10, 1030(x0)
@@ -29,35 +30,35 @@ loop:
     # se for entrar em nenhum, eh maior que 35
     addi x5, x0, 1
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
     
 Menor16C:
 	addi x5, x0, 4
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
 	
 
 Menor21C:
 	addi x5, x0, 16
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
 
 Menor26C:
 	addi x5, x0, 32
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
 
 Menor31C:
 	addi x5, x0, 8
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
 
 Menor36C:
 	addi x5, x0, 2
     sb x5, 1029(x0)
-    jal x11, Limpar
+    beq x0, x0, Limpar
 
 Limpar:
 	sb x0, 1029(x0)
-	jal x12, loop
+	beq x0, x0, loop
 	halt

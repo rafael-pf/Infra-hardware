@@ -1,10 +1,15 @@
-#OBS: lê o input uma unica vez e fica piscando com o numero correspondente
-
-
-addi x5, x0, 0 
-addi x6, x0, 0
-sb x5, 1029(x0)
-sb x6, 1027(x0)
+# OBS: Pinos:
+#		a: 2
+#		b: 3
+#		c: 4 
+#		d: 5
+#		e: 6
+#		f: 7
+#		g: 8
+#		h: 9
+# Reposta: Considerando a frequência 1000hz, CPI = (CPUtime * freq)/instCount = (0.185 * 1000)/48
+#												 = 3,85
+# Calculamos considerando a entrada 1111, pois teria a maior quantidade de instruções
 
 lw x22, ascii
 
@@ -34,6 +39,7 @@ main:
     sub x21, x21, x22 # transofrmar char para numero
     add x9, x9, x21
 
+	# Faz as comparações pra colocar a instrução no display
     addi x7, x0, 0
     beq x9, x7, numero0
 
@@ -64,103 +70,80 @@ main:
     addi x7, x0, 9
     beq x9, x7, numero9
 
+	addi x7, x0, 15
+	beq x9, x7, limpar
 
+# Escreve cada número
 numero0:
-	addi x5, x0, 63	
+	addi x5, x0, 63
 	sb x5, 1029(x0)
-	addi x5, x0, 0
-	sb x5, 1029(x0)
-	jal x11, numero0
+	halt
 
 numero1:
 	addi x5, x0, 6
 	sb x5, 1029(x0)
-	addi x5, x0, 0
-	sb x5, 1029(x0)
-	jal x11, numero1
+	halt
 
 numero2:
 	addi x5, x0, 27
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero2
+	halt
 
 numero3:
 	addi x5, x0, 15
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero3
+	halt
 
 numero4:
 	addi x5, x0, 38
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero4
+	halt
 
 numero5:
 	addi x5, x0, 45
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero5
+	halt
 
 numero6:
 	addi x5, x0, 61
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero6
+	halt
 
 numero7:
 	addi x5, x0, 7	
 	sb x5, 1029(x0)	
-	addi x5, x0, 0	
-	sb x5, 1029(x0)
-	jal x11, numero7
+	halt
 
 numero8:
 	addi x5, x0, 63
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
-	sb x5, 1029(x0)
-	sb x6, 1027(x0)
-	jal x11, numero8
+	halt
 
 numero9:
 	addi x5, x0, 47
 	addi x6, x0, 1	
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)	
-	addi x5, x0, 0
-	addi x6, x0, 0	
+	halt
+
+# Limpa o display
+limpar:
+	addi x5, x0, 0 
+	addi x6, x0, 0
 	sb x5, 1029(x0)
 	sb x6, 1027(x0)
-	jal x11, numero9
+	halt
 
 ascii: .word 0x30
